@@ -3,6 +3,7 @@ html {
   width: 100%;
 }
 
+/* General styling */
 body {
   background-color: #ECF2FA;
   color: #002244;
@@ -40,7 +41,8 @@ p {
 img {
   border-radius: 2rem;
 }
-    
+
+/* Horizontally center elements */
 .center {
   display: block;
   margin-left: auto;
@@ -51,6 +53,7 @@ img {
   text-align: center;
 }
 
+/* Navigation Bar */
 #navbar {
   margin: 0;
   padding: 0;
@@ -113,6 +116,7 @@ img {
   color: white;
 }
 
+/* "What is Data Justice" background and title */
 #background-info {
   margin-top: -2rem;
   color: #002244;
@@ -126,7 +130,7 @@ img {
   padding-top: 2rem;
 }
 
-/* Learn More button */
+/* Button styling */
 .more-btn {
   height: 30px;
   width: 125px;
@@ -148,7 +152,7 @@ img {
   box-shadow: none;
 }
 
-/* Facts Section Bullet Points */
+/* Facts section bullet point styling */
 .facts ul {
   margin: 2rem;
 }
@@ -217,16 +221,19 @@ img {
              -15px -15px 30px #BECFE7;
 }
 
+/* Sizing pillar image */
 #pillar-img {
   max-width: 40%;
   height: auto;
 }
 
+/* Horizontally align elements */
 .side-by-side {
   display: flex;
   align-items: center;
 }
 
+/* Style section background and text */
 .section {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -239,6 +246,7 @@ img {
   margin-left: 5rem;
 }
 
+/* Vertically align elements */
 .column-text {
   padding-left: 4rem;
   display: flex;
@@ -246,6 +254,7 @@ img {
   justify-content: center;
 }
 
+/* Background section styling */
 .center-align {
   padding-left: 8rem;
   align-items: center;
@@ -255,6 +264,7 @@ img {
   margin-top: 1rem;
 }
 
+/* Sections where image is on left */
 .left-img {
   padding-left: 0;
   margin-left: 1.5rem;
@@ -266,6 +276,7 @@ img {
   margin-right: 1rem;
 }
 
+/* Sections where image is on right */
 .right-img .column-text {
   max-width: 40%;
   height: auto;
@@ -290,14 +301,12 @@ img {
   margin-top: 4rem;
 }
 
+/* Reading List background */
 #readings-section {
   border-radius: 20px 20px 0 0;
 }
 
-.side-wrap {
-  flex-wrap: wrap;
-}
-
+/* Footer */
 footer {
   margin-top: -1rem;
   padding-top: 2rem;
@@ -312,4 +321,8 @@ footer a:link,
 footer a:visited {
   color: white;
   padding-right: 2rem;
+}
+
+.side-wrap {
+  flex-wrap: wrap;
 }

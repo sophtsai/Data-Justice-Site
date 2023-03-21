@@ -217,6 +217,11 @@ img {
              -15px -15px 30px #BECFE7;
 }
 
+#pillar-img {
+  max-width: 40%;
+  height: auto;
+}
+
 .side-by-side {
   display: flex;
   align-items: center;
@@ -287,6 +292,10 @@ img {
 
 #readings-section {
   border-radius: 20px 20px 0 0;
+}
+
+.side-wrap {
+  flex-wrap: wrap;
 }
 
 footer {

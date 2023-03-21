@@ -68,7 +68,6 @@ img {
   padding-bottom: 1rem;
   text-decoration: none;
   font-weight: bold;
-  color: white;
   cursor: pointer;
 }
 
@@ -77,18 +76,21 @@ img {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
+  color: white;
 }
 
 .nav-item:hover {
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-decoration: none;
+  color: #c9def3;
 }
 
 .nav-item:focus:after,
 .nav-item:hover:after {
   width: 100%;
   left: 0%;
+  color: #c9def3;
 }
 
 .nav-item:after {
@@ -98,7 +100,8 @@ img {
   position: absolute;
   width: 0%;
   height: 3px;
-  background-color: white;
+  color: #c9def3;
+  background-color: #c9def3;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: width, left;
@@ -107,8 +110,8 @@ img {
 #home-title {
   font-size: 1.5rem;
   line-height: 1.75rem;
+  color: white;
 }
-
 
 #background-info {
   margin-top: -2rem;
@@ -250,14 +253,28 @@ img {
 .left-img {
   padding-left: 0;
   margin-left: 1.5rem;
+  max-width: 40%;
+  height: auto;
 }
 
 .left-img img{
   margin-right: 1rem;
 }
 
+.right-img .column-text {
+  max-width: 40%;
+  height: auto;
+  margin-left: 1rem;
+}
+
 .right-img h3 {
   line-height: 2.5rem;
+  margin-left: 0;
+}
+
+.right-img img {
+  line-height: 2.5rem;
+  margin-left: 0;
 }
 
 .right-img p {
@@ -285,4 +302,5 @@ footer {
 footer a:link, 
 footer a:visited {
   color: white;
+  padding-right: 2rem;
 }

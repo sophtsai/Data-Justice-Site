@@ -110,6 +110,10 @@ img {
   transition-property: width, left;
 }
 
+#theme-button {
+  margin-left: 0;
+}
+
 #home-title {
   font-size: 1.5rem;
   line-height: 1.75rem;
@@ -321,4 +325,14 @@ footer a:visited {
 
 .side-wrap {
   flex-wrap: wrap;
+}
+
+.dark-main {
+  background-color: #303651;
+  color: white;
+}
+
+.section-dark {
+  background-color: #44607E;
+  color: white;
 }

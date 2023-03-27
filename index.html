@@ -9,7 +9,7 @@
   <link href="reset-webview.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body class="dark-main">
 
   <!-- Navbar -->
   <header id="navbar">
@@ -18,12 +18,13 @@
     <a href="#facts-section" class="nav-item">Fast Facts</a>
     <a href="#background-section" class="nav-item">Background</a>
     <a href="#pillars-section" class="nav-item">Pillars of Data Justice</a>
-    <a href="#readings-section" class="nav-item">Reading List</a></li>
+    <a href="#readings-section" class="nav-item">Reading List</a>
+     <button id="theme-button">Toggle Dark Mode</button>
     </header>
 
   <!--- Intro --->
 
-  <div id="intro-section">
+  <div id="intro-section" class="section-dark">
     <h1 id="title">What is Data Justice?</h1>
     <p>Data justice is a concept that seeks to address issues of fairness and equity in the production, collection, and
       use of digital data. It recognizes that data is not neutral, but rather reflects the values and biases of the
@@ -204,6 +205,9 @@
       </a>
     </div>
   </div>
+  
+  <script src="index.js"></script>
+  
 </body>
 
 <!-- Footer -->

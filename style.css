@@ -5,9 +5,14 @@ html {
 
 /* General styling */
 body {
+  background-color: #0B233D;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.light-main {
   background-color: #ECF2FA;
   color: #002244;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1, h2, h3, p, img, button {
@@ -110,8 +115,59 @@ img {
   transition-property: width, left;
 }
 
+/* Toggle theme button */
 #theme-button {
   margin-left: 0;
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#8abdff,#c9def3);
+ transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 
 #home-title {
@@ -123,10 +179,18 @@ img {
 /* "What is Data Justice" intro section */
 #intro-section {
   margin-top: -2rem;
-  color: #002244;
-  background-color: #c9def3;
   box-shadow: 0 15px 10px -10px rgba(0, 34, 90, 0.9);
   border-radius: 0 0 20px 20px;
+}
+
+.intro-section-dark {
+  background-color: #44607E;
+  color: white;
+}
+
+.light-main .intro-section-light {
+  background-color: #c9def3;
+  color: #002244;
 }
 
 #title {
@@ -163,13 +227,17 @@ img {
 
 .facts li {
   font-size: 1.2rem;
-  background-image: url(img/circle-chevron.svg);
+  background-image: url(img/white-chev-circle.svg);
   background-repeat: no-repeat;
   list-style: none;
   background-size: 30px;
   line-height: 25px;
   padding-left: 50px;
   padding-bottom: 20px;
+}
+
+.light-main .facts li {
+  background-image: url(img/circle-chevron.svg);
 }
 
 /* Cards */
@@ -237,8 +305,15 @@ img {
 .section {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  border-radius: 20px; 
+}
+
+.section-dark {
+  background: linear-gradient(293deg, #213B57, #213B57);
+}
+
+.light-main .section-light {
   background: linear-gradient(293deg, #A8B1CF, #BECFE7);
-  border-radius: 20px;
 }
 
 .section h2 {
@@ -327,12 +402,3 @@ footer a:visited {
   flex-wrap: wrap;
 }
 
-.dark-main {
-  background-color: #303651;
-  color: white;
-}
-
-.section-dark {
-  background-color: #44607E;
-  color: white;
-}

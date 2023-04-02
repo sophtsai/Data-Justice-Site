@@ -376,6 +376,36 @@ input:checked + .slider:before {
   margin-top: 4rem;
 }
 
+/* Petition section */
+.petition-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100;
+  padding-bottom: 50px;
+}
+
+.petition-para {
+  width: 55%;
+  padding-right: 10px;
+}
+
+.signatures {
+  width: 45%;
+  padding-right: 10px;
+  max-height: 10rem;
+  overflow: auto;
+}
+
+.signatures p {
+  margin-left: 0;
+}
+
+form {
+  margin-left: 5rem;
+  margin-bottom: 1rem;
+}
+
 /* Reading List background */
 #readings-section {
   border-radius: 20px 20px 0 0;

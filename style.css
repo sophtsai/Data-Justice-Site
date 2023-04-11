@@ -391,13 +391,18 @@ input:checked + .slider:before {
 }
 
 .signatures {
-  width: 45%;
   padding-right: 10px;
   max-height: 10rem;
   overflow: auto;
 }
 
-.signatures p {
+.sig-list p {
+  margin-left: 0;
+}
+
+.sig-list {
+  display: flex;
+  flex-direction: column;
   margin-left: 0;
 }
 
@@ -429,6 +434,22 @@ input {
 
 .input:focus {
   box-shadow: 0 0 0 .15vw #A8B1CF;
+}
+
+.error {
+/*   border-style: solid;
+  border-width: 2px;
+  border-color: red; */
+  box-shadow: 0 0 0 .15vw #DC3421;
+  background:#F8A4A9;
+}
+
+.error:hover {
+  box-shadow: 0 0 0 .15vw #EA6C65;
+}
+
+.error:focus {
+  box-shadow: 0 0 0 .15vw #D61600;
 }
 
 /* Reading List background */

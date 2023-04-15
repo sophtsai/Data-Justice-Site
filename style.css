@@ -47,6 +47,18 @@ img {
   border-radius: 2rem;
 }
 
+.revealable {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
 /* Horizontally center elements */
 .center {
   display: block;

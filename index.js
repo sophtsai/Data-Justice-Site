@@ -11,13 +11,10 @@ themeButton.addEventListener("change", toggleDarkMode);
 let signNowButton = document.querySelector("#sign-now-button");
 let count = 3;
 
-const addSignature = () => {
-  let name = document.getElementById('name').value;
-  let hometown = document.getElementById('hometown').value;
-  let email = document.getElementById('email').value;
-
+const addSignature = (person) => {
+  
   let supportSent = document.createElement("p");
-  supportSent.innerHTML = "🖊️ " + name + " from " + hometown + " supports this."
+  supportSent.innerHTML = "🖊️ " + person.name + " from " + person.hometown + " supports this."
 
   let supportList = document.querySelector(".signatures");
   supportList.appendChild(supportSent);
@@ -41,6 +38,12 @@ const validateForm = () => {
 
   var petitionInputs = document.getElementById("sign-petition").elements;
 
+  let person = {
+    name: petitionInputs[0].value,
+    hometown: petitionInputs[1].value,
+    email: petitionInputs[2].value
+  }
+
   // Check if any input is less than 2 characters
   for (let i = 0; i < petitionInputs.length; i++) {
     if (petitionInputs[i].value.length < 2) {
@@ -53,7 +56,7 @@ const validateForm = () => {
 
   // Check if email input consists of .com
   const email = document.getElementById('email');
-  if (!email.value.includes('.com')) {
+  if (!person.email.includes('.com')) {
     containsErrors = true;
     email.classList.add('error');
   } else {
@@ -62,7 +65,8 @@ const validateForm = () => {
 
   // Add signature and reset validation
   if (containsErrors == false) {
-    addSignature();
+    addSignature(person);
+    toggleModal(person); 
     for (let i = 0; i < petitionInputs.length; i++) {
       petitionInputs[i].value = "";
       containsErrors = false;
@@ -99,3 +103,34 @@ const reveal = () => {
 }
 
 window.addEventListener('scroll', reveal);
+
+const toggleModal = (person) => {
+  let modal = document.getElementById("thanks-modal");
+  let modalContent = document.getElementById("thanks-modal-content");
+  let intervalId = setInterval(scaleImage, 500)
+  
+  modal.style.display = "flex";
+  modalContent.innerHTML = "Thank you " + person.name + " for representing " + person.hometown + "!";
+
+  setTimeout(() => {
+  modal.style.display = "none";
+  clearInterval(intervalId);
+}, 4000)
+}
+
+let scaleFactor = 1;
+let modalImage = document.getElementById("thanks-img");
+
+const scaleImage = () => {
+  scaleFactor = scaleFactor === 1 ? 0.8 : 1;
+  modalImage.style.transform = `scale(${scaleFactor})`;
+}
+
+let closeButton = document.getElementById("close-btn");
+
+const closePopup = () => {
+  let modal = document.getElementById("thanks-modal");
+  modal.style.display = "none"
+}
+
+closeButton.addEventListener("click", closePopup);

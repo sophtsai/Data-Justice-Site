@@ -49,7 +49,7 @@ img {
 
 .revealable {
   position: relative;
-  transform: translateY(150px);
+  transform: translateY(50px);
   opacity: 0;
   transition: all 2s ease;
 }
@@ -490,3 +490,47 @@ footer a:visited {
   flex-wrap: wrap;
 }
 
+/* the modal that covers the background and prevents user interactions */
+.modal {
+  display: none; /* hides the modal from view by default*/
+  position: fixed; /* keeps the modal in one place */
+  z-index: 2; /* positions the modal on top of all other elements on the screen */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.4); /* 40% opacity black - other elements can still be seen */
+  flex-direction: column; /* these flexbox rules center the content on the screen */
+  align-items: center;
+  justify-content: center;
+}
+
+/* box that contains all the content and images */
+.modal-content {
+  background-color: #A8B1CF;
+  color: #002244;
+  text-align: center;
+  font-size: 3rem;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+.modal-content img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 2rem;
+}
+
+#thanks-modal-content {
+  width: 15rem; /* sets a default width for the text container */
+}
+
+#modal-text-container {
+  display: flex; /* adds flexbox to center the text and buttons (stretch feature) */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -12,7 +12,7 @@ let signNowButton = document.querySelector("#sign-now-button");
 let count = 3;
 
 const addSignature = (person) => {
-  
+
   let supportSent = document.createElement("p");
   supportSent.innerHTML = "🖊️ " + person.name + " from " + person.hometown + " supports this."
 
@@ -66,7 +66,7 @@ const validateForm = () => {
   // Add signature and reset validation
   if (containsErrors == false) {
     addSignature(person);
-    toggleModal(person); 
+    toggleModal(person);
     for (let i = 0; i < petitionInputs.length; i++) {
       petitionInputs[i].value = "";
       containsErrors = false;
@@ -104,20 +104,22 @@ const reveal = () => {
 
 window.addEventListener('scroll', reveal);
 
+// Form completion popup
 const toggleModal = (person) => {
   let modal = document.getElementById("thanks-modal");
   let modalContent = document.getElementById("thanks-modal-content");
   let intervalId = setInterval(scaleImage, 500)
-  
+
   modal.style.display = "flex";
   modalContent.innerHTML = "Thank you " + person.name + " for representing " + person.hometown + "!";
 
   setTimeout(() => {
-  modal.style.display = "none";
-  clearInterval(intervalId);
-}, 4000)
+    modal.style.display = "none";
+    clearInterval(intervalId);
+  }, 4000)
 }
 
+// Popup animation
 let scaleFactor = 1;
 let modalImage = document.getElementById("thanks-img");
 
@@ -126,6 +128,7 @@ const scaleImage = () => {
   modalImage.style.transform = `scale(${scaleFactor})`;
 }
 
+// Close popup
 let closeButton = document.getElementById("close-btn");
 
 const closePopup = () => {
